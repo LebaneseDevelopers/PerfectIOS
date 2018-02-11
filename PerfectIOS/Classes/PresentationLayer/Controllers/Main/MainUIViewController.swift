@@ -1,7 +1,7 @@
 import UIKit
 import RxSwift
 
-class ViewController: UIViewController {
+class MainVC: UIViewController {
 
     fileprivate var disposableBag = DisposeBag()
     
