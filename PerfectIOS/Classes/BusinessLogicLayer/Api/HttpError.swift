@@ -1,13 +1,33 @@
 import Alamofire
 
-class HttpError: Error {
-
-    init(code httpResponseCode: Int) {
-        self.httpResponseCode = httpResponseCode
+enum HTTPError: Int, Error {
+    
+    case unauthorizedError = 401
+    case decodeError = 444
+    
+    var code: Int {
+        switch self {
+        default:
+            return self.rawValue
+        }
     }
-    var httpResponseCode: Int = 200
-}
-
-public enum HttpErrorCode: Int {
-    case FAILED_TO_DECODE_DATA = 444
+    
+    var description: String {
+        switch self {
+        case .decodeError:
+            return "Failed to decode object."
+        case .unauthorizedError:
+            return "Unauthorized call made to server."
+        }
+    }
+    
+    //TODO: Add implementation of localization for errors lets support arabic and english for now
+    //Going to need to add localizable string classes etc
+    var localizedDescription: String {
+        switch self {
+        default:
+            return self.description
+        }
+    }
+    
 }
