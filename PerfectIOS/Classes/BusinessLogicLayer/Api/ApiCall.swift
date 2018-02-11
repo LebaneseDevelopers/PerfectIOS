@@ -44,7 +44,8 @@ class ApiCall {
             }
 
             return Disposables.create(with: request.cancel)
-        }.observeOn(MainScheduler.instance)
-            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+
+        }.subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .observeOn(MainScheduler.instance)
     }
 }
