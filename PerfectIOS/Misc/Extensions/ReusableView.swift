@@ -1,11 +1,3 @@
-//
-//  ReusableCell.swift
-//  ProjectSample
-//
-//  Created by Hadi Dbouk on 2/10/18.
-//  Copyright © 2018 Hadi Dbouk. All rights reserved.
-//
-
 import UIKit
 
 protocol ReusableView: class {
@@ -35,24 +27,24 @@ extension UITableViewCell: ReusableView {
 }
 
 extension UITableView {
-    
-    func register<T: UITableViewCell>(_: T.Type){
+
+    func register<T: UITableViewCell>(_: T.Type) {
         register(T.self, forCellReuseIdentifier: T.defaultReuseIdentifier)
     }
-    
-    func register<T: UITableViewCell>(_: T.Type) where T:NibLoadableView {
+
+    func register<T: UITableViewCell>(_: T.Type) where T: NibLoadableView {
         let bundle = Bundle(for: T.self)
         let nib = UINib(nibName: T.nibName, bundle: bundle)
         register(nib, forCellReuseIdentifier: T.defaultReuseIdentifier)
     }
-    
+
     func dequeueReusableCell<T: UITableViewCell>(forIndexPath indexPath: IndexPath) -> T {
         guard let cell = dequeueReusableCell(withIdentifier: T.defaultReuseIdentifier, for: indexPath) as? T else {
             fatalError("Could not dequeue cell with identifier: \(T.defaultReuseIdentifier)")
         }
         return cell
     }
-    
+
     func dequeueCell<T>(ofType type: T.Type) -> T {
         return dequeueReusableCell(withIdentifier: String(describing: T.self)) as! T
     }

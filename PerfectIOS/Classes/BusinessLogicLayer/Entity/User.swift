@@ -1,11 +1,3 @@
-//
-//  User.swift
-//  CodableExample
-//
-//  Created by Serj Agopian on 2/10/18.
-//  Copyright © 2018 Serj Agopian. All rights reserved.
-//
-
 import Foundation
 
 /// Making user object Codable since you will most probably send a user object
@@ -14,7 +6,7 @@ import Foundation
 /// It is prefered to make objects structs. Unless you want an object to be passed around as reference
 /// Also make all the properties let declerations unless you plan on mutating them
 struct User: Codable {
-    
+
     /// Set properties as optional so that the decoding succeeds even if the
     /// Property doesn't exist
     /// If you are sure that the property will always exist you can remove the optional!
@@ -26,9 +18,9 @@ struct User: Codable {
     let phone: String?
     let website: String?
     let company: Company?
-    
+
     enum CodingKeys: String, CodingKey {
         case id, name, username, email, address, phone, website, company
     }
-    
+
 }

@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  ProjectSample
-//
-//  Created by Hadi Dbouk on 2/10/18.
-//  Copyright © 2018 Hadi Dbouk. All rights reserved.
-//
-
 import UIKit
 import RxSwift
 

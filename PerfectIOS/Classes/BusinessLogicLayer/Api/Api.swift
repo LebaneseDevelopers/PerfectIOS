@@ -1,11 +1,3 @@
-//
-//  Api.swift
-//  ProjectSample
-//
-//  Created by Hadi Dbouk on 2/11/18.
-//  Copyright © 2018 Hadi Dbouk. All rights reserved.
-//
-
 import RxSwift
 
 class Api {
@@ -15,7 +7,7 @@ class Api {
             method: .get,
             bodyParams: nil,
             headers: nil)
-        
+
         let usersObservable: Observable<[User]> = ApiCall.Get(request: request)
         return usersObservable
     }
