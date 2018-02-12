@@ -90,8 +90,7 @@
 		EC66629D2030769400684C1E /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
-				EC6662A82030B98000684C1E /* Controllers */,
-				EC6662A42030852300684C1E /* Views */,
+				EC6662A82030B98000684C1E /* Scenes */,
 				EC66629E2030769F00684C1E /* Storyboards */,
 			);
 			path = PresentationLayer;
@@ -109,34 +108,19 @@
 		EC66629F203077F500684C1E /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				EC6662A620308ABA00684C1E /* MainUITableViewCell.swift */,
 				EC7C95B8202F6A5600E533A0 /* MainUIViewController.swift */,
 				EC6662A22030789A00684C1E /* MainViewModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
 		};
-		EC6662A42030852300684C1E /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				EC6662A520308AA100684C1E /* Cells */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		EC6662A520308AA100684C1E /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				EC6662A620308ABA00684C1E /* MainUITableViewCell.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		EC6662A82030B98000684C1E /* Controllers */ = {
+		EC6662A82030B98000684C1E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				EC66629F203077F500684C1E /* Main */,
 			);
-			path = Controllers;
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		EC7C95AA202F6A5600E533A0 = {
